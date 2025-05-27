@@ -1,12 +1,52 @@
 # Task Planner
 
-Веб-приложение для планирования задач с поддержкой офлайн-режима и синхронизацией с Google Drive.
+Веб-приложение для ведения дневника и планирования задач с поддержкой офлайн-режима, синхронизацией с Google Drive, возможностью хранения файлов и расширенным функционалом.
 
-## Стек технологий
-- React (Atomic Design)
-- IndexedDB (idb)
-- Google Drive API (позже)
-- PWA
+---
+
+## Итоговый стек технологий и их назначение
+
+### 1. **Frontend (Клиентская часть)**
+- **React** — создание пользовательского интерфейса.
+- **Atomic Design** — организация компонентов по уровням абстракции.
+- **PWA (Progressive Web App)** — позволяет работать приложению как нативному, с поддержкой офлайн-режима и установки на устройство.
+- **IndexedDB (через idb)** — локальное хранение заметок, файлов и настроек пользователя прямо в браузере.
+- **Google Drive API** — синхронизация данных и файлов пользователя с его Google Диском для доступа с разных устройств.
+- **Material UI** или **Ant Design** — готовые UI-компоненты для быстрого и красивого интерфейса.
+- **Service Workers** — обеспечение офлайн-работы и push-уведомлений.
+- **Socket.io-client** — синхронизация данных в реальном времени (при необходимости).
+- **pdf-lib** или **jsPDF** — генерация PDF-файлов из заметок и документов.
+- **react-dropzone** — загрузка файлов и изображений пользователем.
+- **Google OAuth 2.0** — аутентификация через Google-аккаунт.
+
+### 2. **Backend (Серверная часть)**
+- **Node.js + Express** — сервер для раздачи установочного файла приложения, аутентификации, блога и документации.
+- **MySQL** — хранение данных блога и документации (публичная информация, не пользовательские данные).
+- **phpMyAdmin** — удобное управление базой данных MySQL через веб-интерфейс.
+- **Socket.io** — серверная часть для поддержки синхронизации в реальном времени (если потребуется).
+- **jsonwebtoken** — для аутентификации пользователей (если потребуется серверная авторизация).
+- **multer** — обработка загрузки файлов на сервер (если потребуется для блога/документации).
+
+### 3. **Инструменты для разработки**
+- **VS Code** — основной редактор кода.
+- **npm** — менеджер пакетов для установки зависимостей.
+- **Git** — система контроля версий.
+- **Postman** — тестирование API.
+- **Open Server Panel** — локальный сервер для запуска MySQL и phpMyAdmin.
+- **Google Cloud Console** — регистрация приложения для работы с Google API.
+
+---
+
+## Как используются технологии
+
+- **React, Material UI, PWA, IndexedDB** — основной интерфейс и локальное хранение данных пользователя.
+- **Google Drive API, Google OAuth 2.0** — синхронизация и аутентификация через Google, хранение данных на Google Диске пользователя.
+- **Node.js + Express, MySQL, phpMyAdmin** — серверная часть для блога и документации, не затрагивающая приватные пользовательские данные.
+- **Service Workers, Socket.io** — офлайн-режим и (опционально) синхронизация между устройствами.
+- **pdf-lib/jsPDF, react-dropzone** — работа с файлами, создание PDF, загрузка изображений.
+- **Инструменты разработки** — для удобства и эффективности работы над проектом.
+
+---
 
 ## Запуск проекта
 
@@ -15,80 +55,4 @@ npm install
 npm start
 ```
 
-
-
-
-
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-
+---

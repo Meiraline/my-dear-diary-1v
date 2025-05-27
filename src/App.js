@@ -1,15 +1,17 @@
 import './App.css';
 
-import { AppRouter } from "./router";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-       
-       <AppRouter />
+      
+
       
       </header>
+      <div>
+        тестовое приложение для проверки работы react-router-dom v6.4.3
+      </div>
     </div>
   );
 }
