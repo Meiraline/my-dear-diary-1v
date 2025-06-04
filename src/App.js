@@ -1,17 +1,29 @@
-import './App.css';
+
+
+
 
 
 function App() {
+
+  let likes= 0;
+
+  function increment() {
+    likes += 1;
+    console.log(likes);
+  }
+  function decrement() {
+    likes -= 1;
+    console.log(likes);
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
+      <h1>{likes}</h1>
+      <button onClick={increment}> Increment </button>
+      <button onClick={decrement}> Decrement </button>
+     
       
-
-      
-      </header>
-      <div>
-        тестовое приложение для проверки работы react-router-dom v6.4.3
-      </div>
     </div>
   );
 }
