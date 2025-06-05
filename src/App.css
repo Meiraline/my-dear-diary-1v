@@ -1,0 +1,15 @@
+*{
+    margin: 20px;;
+    padding:0;  
+    box-sizing: border-box;
+}
+
+.App{
+    width: 800px;
+}
+
+#root{
+    display: flex;
+    justify-content: center;
+   
+}
