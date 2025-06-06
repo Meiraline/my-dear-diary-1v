@@ -1,32 +1,28 @@
 import React, { useEffect, useState } from 'react';
-import { getNotes, addNote, deleteNote } from '../../data_base/bd';
+import { getNotes, addNote, deleteNote } from '../../data_base/userDb';
 
-const NotesBoard = () => {
+const NotesBoard = ({ db }) => {
   const [notes, setNotes] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [newNote, setNewNote] = useState({ title: '', body: '' });
 
   // Загрузка заметок при монтировании
-  useEffect(() => {
-    loadNotes();
-  }, []);
-
-  const loadNotes = async () => {
-    const allNotes = await getNotes();
+   const loadNotes = async () => {
+    const allNotes = await db.notes.toArray();
     setNotes(allNotes);
   };
 
   const handleAddNote = async (e) => {
     e.preventDefault();
     if (!newNote.title.trim() && !newNote.body.trim()) return;
-    await addNote(newNote);
+    await db.notes.add({ ...newNote, createdAt: new Date() });
     setNewNote({ title: '', body: '' });
     setShowModal(false);
     loadNotes();
   };
 
   const handleDeleteNote = async (id) => {
-    await deleteNote(id);
+    await db.notes.delete(id);
     loadNotes();
   };
 
