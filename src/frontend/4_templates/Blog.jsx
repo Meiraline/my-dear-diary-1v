@@ -1,8 +1,8 @@
-import PostItom from "../3_organisms/PostItom";
+
 import PostIist from "./PostList";
 import PostForm from "../3_organisms/PostForm";
 import Select from "../1_atoms/Select/Select";
-import React, { use, useRef, useState } from 'react';
+
 
 
 
