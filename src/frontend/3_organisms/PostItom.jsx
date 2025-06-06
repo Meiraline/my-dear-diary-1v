@@ -1,4 +1,4 @@
-
+import Button from '../1_atoms/Button/Button';
 
 const PostItom = (props) => {
   return (
@@ -11,7 +11,7 @@ const PostItom = (props) => {
   
       </div>
       <div> 
-        <button>Удалить</button> 
+        <Button onClick={()=>props.remove(props.post)} >Удалить</Button> 
       </div>
     </div>
   
