@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import Input from '../1_atoms/Input/Input';
-import Button from '../1_atoms/Button/Button';
+import Button from '../1_atoms/ButtonText/Button';
 
 
 const PostForm = ({create}) => {

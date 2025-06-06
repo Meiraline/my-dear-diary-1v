@@ -3,6 +3,9 @@ import React, { useState } from 'react';
 import AuthForm from './frontend/5_page/AuthForm';
 import NotesBoard from './frontend/4_templates/NotesBoard';
 import { createUserDb } from './data_base/userDb';
+import Button from './frontend/1_atoms/ButtonText/Button';
+
+import './App.css';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -13,16 +16,24 @@ function App() {
     setDb(createUserDb(username));
   };
 
-  if (!user) {
-    return (
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-        <AuthForm onAuth={handleAuth} />
-      </div>
-    );
-  }
+  // if (!user) {
+  //   return (
+  //     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+  //       <AuthForm onAuth={handleAuth} />
+  //     </div>
+  //   );
+  // }
 
   return (
-    <NotesBoard db={db} />
+
+    <div className='App'>
+
+    <Button>nnnnnn</Button>
+
+
+    </div>
+
+    // <NotesBoard db={db} />
   );
 }
 
