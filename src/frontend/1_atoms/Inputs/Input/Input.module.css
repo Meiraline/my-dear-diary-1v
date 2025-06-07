@@ -1,20 +1,20 @@
 .input {
-    width: 100%;
-    padding: 14px 18px;
-    margin-bottom: 18px;
-    border: 2px solid var(--text-akcent-color);
-    border-radius: 8px;
+    width: 10vw;
+    padding: 0.7vw 0.9vw;
+    margin-bottom: 0.9vw;
+    border: 0.2vw solid var(--text-akcent-color);
+    border-radius: 0.4vw;
     background: var(--background-color);
     color: var(--text-color);
-    font-size: 20px;
+    font-size: 2vw;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-weight: 400;
-    box-shadow: 0 2px 6px rgba(50, 50, 93, 0.07);
+    box-shadow: 0 0.1vw 0.3vw rgba(50, 50, 93, 0.07);
     outline: none;
     transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .input:focus {
     border-color: var(--menu-color-2);
-    box-shadow: 0 4px 12px rgba(118, 181, 199, 0.15); 
+    box-shadow: 0 0.2vw 0.6vw rgba(118, 181, 199, 0.15); 
 }

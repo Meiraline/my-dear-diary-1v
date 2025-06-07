@@ -20,6 +20,7 @@ import Input from './frontend/1_atoms/Inputs/Input/Input';
 import Checkbox from './frontend/1_atoms/Inputs/Checkbox/Checkbox';
 import Select from './frontend/1_atoms/Inputs/Select/Select';
 import NavLink from './frontend/1_atoms/Buttons/NavLink/NavLink';
+import RiteForm from './frontend/2_molecules/RiteForm/RiteForm';
 
 
 function App() {
@@ -59,27 +60,21 @@ const [fontSize, setFontSize] = useState('13');
 
     <div className='App'>
 
-   <Select
-  label="Размер шрифта"
-  options={[
-    { value: '11', name: '11 pt' },
-    { value: '13', name: '13 pt' },
-    { value: '15', name: '15 pt' },
-    { value: '17', name: '17 pt' },
-  ]}
-  value={fontSize}
-  onChange={setFontSize}
-  defaultValue="Размер шрифта"
-/>
-
-<div>
-  <NavLink active>Вид</NavLink>
-  <NavLink>Свойство</NavLink>
-  <NavLink>Фильтр</NavLink>
-  <NavLink>Сортировка</NavLink>
-  <NavLink>Группировка</NavLink>
-  <NavLink>Подпункты</NavLink>
-</div>
+   <RiteForm
+  header={
+    <>
+      <NavLink active>Вход</NavLink>
+      <NavLink>Регистрация</NavLink>
+    </>
+  }
+  title="Давай знакомиться!"
+  subtitle="зарегистрируйся чтобы продолжить"
+  rightContent={<img src="/img/logo.png" alt="logo" style={{maxWidth: '60%', height: 'auto'}} />}
+>
+  <Input placeholder="никнейм" />
+  <Input placeholder="пароль" type="password" />
+  <ButtonLongIcon>войти</ButtonLongIcon>
+</RiteForm>
 
     </div>
 

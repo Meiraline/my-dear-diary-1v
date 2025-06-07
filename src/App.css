@@ -1,5 +1,5 @@
 *{
-    margin: 20px;;
+    margin: 0px;;
     padding:0;  
     box-sizing: border-box;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif; 
@@ -9,14 +9,10 @@
 }
 
 .App{
-    width: 800px;
+    width: 100%;
 }
 
-/* #root{
-    display: flex;
-    justify-content: center;
-   
-} */
+
 
 
 
