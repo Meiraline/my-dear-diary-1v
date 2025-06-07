@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import Input from '../1_atoms/Input/Input';
+import Input from '../1_atoms/Inputs/Input/Input';
 import Button from '../1_atoms/Buttons/ButtonText/ButtonText';
 
 

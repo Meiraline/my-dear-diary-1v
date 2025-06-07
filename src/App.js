@@ -16,16 +16,28 @@ import ButtonText from './frontend/1_atoms/Buttons/ButtonText/ButtonText';
 import ButtonCqerIcon from './frontend/1_atoms/Buttons/ButtonСircleIcon/ButtonСircleIcon';
 import ButtonСircleIcon from './frontend/1_atoms/Buttons/ButtonСircleIcon/ButtonСircleIcon';
 import Icon from './frontend/1_atoms/Buttons/Icon/Icon';
+import Input from './frontend/1_atoms/Inputs/Input/Input';
+import Checkbox from './frontend/1_atoms/Inputs/Checkbox/Checkbox';
 
 
 function App() {
   const [user, setUser] = useState(null);
   const [db, setDb] = useState(null);
 
+  // const handleAuth = (username) => {
+  //   setUser(username);
+  //   setDb(createUserDb(username));
+  // };
+
+
+const [isActive, setIsActive] = useState(false);
+
   const handleAuth = (username) => {
     setUser(username);
     setDb(createUserDb(username));
   };
+
+
 
   // if (!user) {
   //   return (
@@ -39,16 +51,10 @@ function App() {
 
     <div className='App'>
 
-    <ButtonText>hhh</ButtonText>
-    <p>    </p>
-    <ButtonLongIcon icon={"/icon/Закладки.svg"} >  </ButtonLongIcon>
-    <p>    </p>
-    <ButtonSquareIcon icon={"/icon/Закладки.svg"} >  </ButtonSquareIcon>
-    <p>    </p>
-    <ButtonСircleIcon icon={"/icon/Закладки.svg"} >  </ButtonСircleIcon>
-    <p>    </p>
-    <Icon icon={"/icon/Закладки.svg" } color={"n"}></Icon>
-
+    <Input placeholder='jjfjj' />
+      <Checkbox checked={isActive} onChange={() => setIsActive((prev) => !prev)} />
+      <p>{isActive ? 'активен' : 'не активен'}</p>
+    
     </div>
 
     // <NotesBoard db={db} />
