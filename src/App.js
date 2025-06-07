@@ -18,6 +18,7 @@ import ButtonСircleIcon from './frontend/1_atoms/Buttons/ButtonСircleIcon/Butt
 import Icon from './frontend/1_atoms/Buttons/Icon/Icon';
 import Input from './frontend/1_atoms/Inputs/Input/Input';
 import Checkbox from './frontend/1_atoms/Inputs/Checkbox/Checkbox';
+import Select from './frontend/1_atoms/Inputs/Select/Select';
 
 
 function App() {
@@ -30,12 +31,7 @@ function App() {
   // };
 
 
-const [isActive, setIsActive] = useState(false);
 
-  const handleAuth = (username) => {
-    setUser(username);
-    setDb(createUserDb(username));
-  };
 
 
 
@@ -47,14 +43,33 @@ const [isActive, setIsActive] = useState(false);
   //   );
   // }
 
+
+const [fontSize, setFontSize] = useState('13');
+
+  const fontSizeOptions = [
+    { value: '11', name: '11 pt' },
+    { value: '13', name: '13 pt' },
+    { value: '15', name: '15 pt' },
+    { value: '17', name: '17 pt' },
+  ];
+
+
   return (
 
     <div className='App'>
 
-    <Input placeholder='jjfjj' />
-      <Checkbox checked={isActive} onChange={() => setIsActive((prev) => !prev)} />
-      <p>{isActive ? 'активен' : 'не активен'}</p>
-    
+   <Select
+  label="Размер шрифта"
+  options={[
+    { value: '11', name: '11 pt' },
+    { value: '13', name: '13 pt' },
+    { value: '15', name: '15 pt' },
+    { value: '17', name: '17 pt' },
+  ]}
+  value={fontSize}
+  onChange={setFontSize}
+  defaultValue="Размер шрифта"
+/>
     </div>
 
     // <NotesBoard db={db} />
