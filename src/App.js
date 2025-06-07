@@ -60,21 +60,7 @@ const [fontSize, setFontSize] = useState('13');
 
     <div className='App'>
 
-   <RiteForm
-  header={
-    <>
-      <NavLink active>Вход</NavLink>
-      <NavLink>Регистрация</NavLink>
-    </>
-  }
-  title="Давай знакомиться!"
-  subtitle="зарегистрируйся чтобы продолжить"
-  rightContent={<img src="/img/logo.png" alt="logo" style={{maxWidth: '60%', height: 'auto'}} />}
->
-  <Input placeholder="никнейм" />
-  <Input placeholder="пароль" type="password" />
-  <ButtonLongIcon>войти</ButtonLongIcon>
-</RiteForm>
+    <NotesBoard> </NotesBoard>
 
     </div>
 
