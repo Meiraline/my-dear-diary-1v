@@ -42,9 +42,9 @@ function App() {
     <p>    </p>
     <ButtonLongIcon icon={"/icon/Закладки.svg"} >  </ButtonLongIcon>
     <p>    </p>
-    <ButtonSquareIcon icon={"/icon/Закладки.svg"}>  </ButtonSquareIcon>
+    <ButtonSquareIcon icon={"/icon/Закладки.svg"} color={"n"}>  </ButtonSquareIcon>
     <p>    </p>
-    <ButtonСircleIcon icon={"/icon/Закладки.svg"}>  </ButtonСircleIcon>
+    <ButtonСircleIcon icon={"/icon/Закладки.svg"} color={"n"}>  </ButtonСircleIcon>
 
     </div>
 

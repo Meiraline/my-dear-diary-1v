@@ -1,4 +1,5 @@
 .button {
+    /* Общие стили */
     background-color: var(--background-color);
     border: 0.2vw solid var(--text-akcent-color);
     border-radius: 5px;
@@ -19,6 +20,17 @@
         border-color 0.2s,
         box-shadow 0.2s;
 }
+
+
+.nColor {
+  background-color: var(--background-color);
+}
+
+.color {
+  background-color: var(--menu-color-1);
+}
+
+
 
 /* Наведение */
 .button:hover {
@@ -41,4 +53,5 @@
   height: 1.5em;
   object-fit: contain;
   margin: 0.3vw;
+  filter: brightness(0) saturate(100%) invert(13%) sepia(98%) saturate(747%) hue-rotate(170deg) brightness(95%) contrast(90%);
 }

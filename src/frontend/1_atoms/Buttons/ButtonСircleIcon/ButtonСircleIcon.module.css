@@ -20,6 +20,16 @@
         box-shadow 0.2s;
 }
 
+
+.nColor {
+  background-color: var(--background-color);
+}
+
+.color {
+  background-color: var(--menu-color-1);
+}
+
+
 /* Наведение */
 .button:hover {
     background-color: var(--menu-color-2);
@@ -41,4 +51,5 @@
   height: 1.5em;
   object-fit: contain;
   margin: 0.3vw;
+  filter: brightness(0) saturate(100%) invert(13%) sepia(98%) saturate(747%) hue-rotate(170deg) brightness(95%) contrast(90%);
 }
