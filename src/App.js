@@ -15,6 +15,7 @@ import ButtonSquareIcon from './frontend/1_atoms/Buttons/ButtonSquareIcon/Button
 import ButtonText from './frontend/1_atoms/Buttons/ButtonText/ButtonText';
 import ButtonCqerIcon from './frontend/1_atoms/Buttons/ButtonСircleIcon/ButtonСircleIcon';
 import ButtonСircleIcon from './frontend/1_atoms/Buttons/ButtonСircleIcon/ButtonСircleIcon';
+import Icon from './frontend/1_atoms/Buttons/Icon/Icon';
 
 
 function App() {
@@ -42,9 +43,11 @@ function App() {
     <p>    </p>
     <ButtonLongIcon icon={"/icon/Закладки.svg"} >  </ButtonLongIcon>
     <p>    </p>
-    <ButtonSquareIcon icon={"/icon/Закладки.svg"} color={"n"}>  </ButtonSquareIcon>
+    <ButtonSquareIcon icon={"/icon/Закладки.svg"} >  </ButtonSquareIcon>
     <p>    </p>
-    <ButtonСircleIcon icon={"/icon/Закладки.svg"} color={"n"}>  </ButtonСircleIcon>
+    <ButtonСircleIcon icon={"/icon/Закладки.svg"} >  </ButtonСircleIcon>
+    <p>    </p>
+    <Icon icon={"/icon/Закладки.svg" } color={"n"}></Icon>
 
     </div>
 
