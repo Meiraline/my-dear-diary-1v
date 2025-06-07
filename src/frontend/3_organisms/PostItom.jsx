@@ -1,4 +1,4 @@
-import Button from '../1_atoms/ButtonText/Button';
+import Button from '../1_atoms/Buttons/ButtonText/ButtonText';
 
 const PostItom = (props) => {
   return (

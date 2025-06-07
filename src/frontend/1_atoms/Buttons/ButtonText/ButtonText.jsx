@@ -1,8 +1,8 @@
 
 
-import classes from './Button.module.css';
+import classes from './ButtonText.module.css';
 
-const Button = ({children, ...props}) => {
+const ButtonText = ({children, ...props}) => {
 
   
   
@@ -17,4 +17,4 @@ const Button = ({children, ...props}) => {
 };
  
 
-export default Button;
+export default ButtonText;
