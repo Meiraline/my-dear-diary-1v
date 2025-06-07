@@ -19,6 +19,7 @@ import Icon from './frontend/1_atoms/Buttons/Icon/Icon';
 import Input from './frontend/1_atoms/Inputs/Input/Input';
 import Checkbox from './frontend/1_atoms/Inputs/Checkbox/Checkbox';
 import Select from './frontend/1_atoms/Inputs/Select/Select';
+import NavLink from './frontend/1_atoms/Buttons/NavLink/NavLink';
 
 
 function App() {
@@ -70,6 +71,16 @@ const [fontSize, setFontSize] = useState('13');
   onChange={setFontSize}
   defaultValue="Размер шрифта"
 />
+
+<div>
+  <NavLink active>Вид</NavLink>
+  <NavLink>Свойство</NavLink>
+  <NavLink>Фильтр</NavLink>
+  <NavLink>Сортировка</NavLink>
+  <NavLink>Группировка</NavLink>
+  <NavLink>Подпункты</NavLink>
+</div>
+
     </div>
 
     // <NotesBoard db={db} />
