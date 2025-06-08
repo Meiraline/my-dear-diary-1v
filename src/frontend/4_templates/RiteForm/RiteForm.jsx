@@ -6,7 +6,8 @@ const RiteForm = ({
   title,
   subtitle,
   children,
-  rightContent
+  rightContent,
+  onSubmit
 }) => (
   <div className={styles.riteFormWrapper}>
     <div className={styles.left}>
@@ -14,7 +15,7 @@ const RiteForm = ({
       <div className={styles.formContent}>
         {title && <h1 className={styles.title}>{title}</h1>}
         {subtitle && <div className={styles.subtitle}>{subtitle}</div>}
-        <form className={styles.form}>
+        <form className={styles.form} onSubmit={onSubmit}>
           {children}
         </form>
       </div>

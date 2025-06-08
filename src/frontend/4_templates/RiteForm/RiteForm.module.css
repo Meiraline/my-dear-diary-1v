@@ -87,8 +87,8 @@
     box-sizing: border-box;
 }
 
-.form input,
-.form button {
+.form input
+ {
     width: 100%;
     box-sizing: border-box;
 }

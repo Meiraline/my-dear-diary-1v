@@ -1,0 +1,46 @@
+.link {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size: 2vw;
+    font-weight: 700;
+    color: var(--text-color);
+    background: none;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    margin-right: 2vw;
+    padding-bottom: 0.3vw;
+    transition: color 0.2s;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    appearance: none;
+}
+
+.link:last-child {
+    margin-right: 0;
+}
+
+.active {
+    color: var(--text-akcent-color);
+}
+
+.active::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0.2vw;
+    background: var(--text-akcent-color);
+    border-radius: 1vw;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.link:hover,
+.link:focus-visible {
+    color: var(--menu-color-3);
+}
+
+.link:active {
+    color: var(--menu-color-2);
+}
