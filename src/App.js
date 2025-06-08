@@ -1,24 +1,17 @@
+import React from 'react';
+import { useState } from 'react';
+import Error from './frontend/2_molecules/Error/Error';
 
-import React, { useState } from 'react';
-import { createUserDb } from './data_base/userDb';
-
-
-import './App.css';
-import Authentication from './frontend/6_proces/Authentication';
 
 
 function App() {
-  
-const userDb = createUserDb();
 
+    
 
   return (
+    <div className="App">
 
-    <div className='App'>
-      <Authentication userDb={userDb} />
     </div>
-
-   
   );
 }
 
