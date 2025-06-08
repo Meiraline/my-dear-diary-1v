@@ -1,17 +1,14 @@
-import React from 'react';
-import { useState } from 'react';
-import Error from './frontend/2_molecules/Error/Error';
-
-
+import React, { useState } from 'react';
+import AppRouter from './AppRouter';
+import UserContext from './UserContext';
 
 function App() {
-
-    
+  const [currentUser, setCurrentUser] = useState(localStorage.getItem('currentUser'));
 
   return (
-    <div className="App">
-
-    </div>
+    <UserContext.Provider value={{ currentUser, setCurrentUser }}>
+      <AppRouter />
+    </UserContext.Provider>
   );
 }
 
