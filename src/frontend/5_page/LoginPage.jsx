@@ -3,7 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { getUserByUsername } from '../../data_base/userDb';
 import { hashPassword } from '../../utils/hash';
 import UserContext from '../../UserContext';
-import RiteForm from '../4_templates/RiteForm/RiteForm';
+
 
 
 // Импорты элементов
@@ -12,7 +12,7 @@ import Input from '../1_atoms/Inputs/Input/Input';
 import ButtonText from '../1_atoms/Buttons/ButtonText/ButtonText';
 import Error from '../2_molecules/Error/Error';
 import MyLink from '../1_atoms/Buttons/Link/MyLink';
-
+import RiteForm from '../4_templates/RiteForm/RiteForm';
 
 
 
@@ -26,9 +26,7 @@ function LoginPage() {
 
 
   const [error, setError] = useState(null);
-  const [showError, setShowError] = useState(false);
-
- 
+  
   const handleCloseError = () => {
     setError(null);
   };

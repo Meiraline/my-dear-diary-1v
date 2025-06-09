@@ -3,11 +3,29 @@ import { useNavigate, Link } from 'react-router-dom';
 import { addUser, getUserByUsername } from '../../data_base/userDb';
 import { generateSalt, hashPassword } from '../../utils/hash';
 
+
+// Импорты элементов
+
+import Input from '../1_atoms/Inputs/Input/Input';
+import ButtonText from '../1_atoms/Buttons/ButtonText/ButtonText';
+import Error from '../2_molecules/Error/Error';
+import MyLink from '../1_atoms/Buttons/Link/MyLink';
+import RiteForm from '../4_templates/RiteForm/RiteForm';
+
+
+
+
 function RegisterPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+
   const [error, setError] = useState(null);
+ 
+  const handleCloseError = () => {
+    setError(null);
+  };
+
 
   const handleRegister = async () => {
     const exists = await getUserByUsername(username);
@@ -20,16 +38,38 @@ function RegisterPage() {
     navigate('/login');
   };
 
-  return (
+ return (
     <div>
-      <h2>Регистрация</h2>
-      <input value={username} onChange={e => setUsername(e.target.value)} placeholder="Имя пользователя" />
-      <input type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Пароль" />
-      <button onClick={handleRegister}>Зарегистрироваться</button>
-      <p>Уже есть аккаунт? <Link to="/login">Войти</Link></p>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+     
+        <RiteForm 
+        header = <div> 
+        <MyLink  to="/login">Вход</MyLink> 
+        <MyLink active to="/register">Регистрация</MyLink> 
+        </div>
+        
+        title="Давай знакомитья!"
+        subtitle="зарегестрируйся чтобы продолжить"
+       >
+
+        <Input value={username} onChange={e => setUsername(e.target.value)} placeholder="Имя пользователя"></Input>
+        <Input type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Пароль"></Input>
+        
+        <ButtonText onClick={handleRegister} >Зарегистрироваться</ButtonText>
+         
+
+        {error && <Error
+          title="Ошибка регистрации"
+          message={error}
+          onClose={handleCloseError}
+        />}
+
+         </RiteForm>
+
     </div>
   );
 }
 
 export default RegisterPage;
+
+
+
