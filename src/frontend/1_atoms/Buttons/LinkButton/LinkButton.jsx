@@ -1,7 +1,7 @@
 import React from 'react';
-import classes from './NavLinkButton.module.css';
+import classes from './LinkButton.module.css';
 
-const NavLinkButton = ({ active, children, ...props }) => (
+const LinkButton = ({ active, children, ...props }) => (
   <button
     className={`${classes.link} ${active ? classes.active : ''}`}
     {...props}
@@ -10,4 +10,4 @@ const NavLinkButton = ({ active, children, ...props }) => (
   </button>
 );
 
-export default NavLinkButton;
+export default LinkButton;

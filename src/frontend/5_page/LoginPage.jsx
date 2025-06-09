@@ -3,13 +3,36 @@ import { useNavigate, Link } from 'react-router-dom';
 import { getUserByUsername } from '../../data_base/userDb';
 import { hashPassword } from '../../utils/hash';
 import UserContext from '../../UserContext';
+import RiteForm from '../4_templates/RiteForm/RiteForm';
+
+
+// Импорты элементов
+
+import Input from '../1_atoms/Inputs/Input/Input';
+import ButtonText from '../1_atoms/Buttons/ButtonText/ButtonText';
+import Error from '../2_molecules/Error/Error';
+import MyLink from '../1_atoms/Buttons/Link/MyLink';
+
+
+
+
 
 function LoginPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const { setCurrentUser } = useContext(UserContext);
   const navigate = useNavigate();
+
+
+
   const [error, setError] = useState(null);
+  const [showError, setShowError] = useState(false);
+
+ 
+  const handleCloseError = () => {
+    setError(null);
+  };
+
 
   const handleLogin = async () => {
     const user = await getUserByUsername(username);
@@ -25,14 +48,63 @@ function LoginPage() {
 
   return (
     <div>
-      <h2>Вход</h2>
-      <input value={username} onChange={e => setUsername(e.target.value)} placeholder="Имя пользователя" />
-      <input type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Пароль" />
-      <button onClick={handleLogin}>Войти</button>
-      <p>Нет аккаунта? <Link to="/register">Зарегистрироваться</Link></p>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+     
+
+        <RiteForm 
+        header = <div> 
+        <MyLink active to="/login">Вход</MyLink> 
+        <MyLink to="/register">Регистрация</MyLink> 
+        </div>
+        
+        title="Мы скучали!"
+        subtitle="войдите чтобы продолжить"
+       >
+
+        <Input value={username} onChange={e => setUsername(e.target.value)} placeholder="Имя пользователя"></Input>
+        <Input type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Пароль"></Input>
+        
+        <ButtonText onClick={handleLogin} >Войти</ButtonText>
+         
+
+        {error && <Error
+          title="Ошибка авторизации"
+          message={error}
+          onClose={handleCloseError}
+        />}
+
+         </RiteForm>
+
+
+
+
     </div>
   );
 }
 
 export default LoginPage;
+
+
+// const [showError, setShowError] = useState(false);
+
+//   const handleErrorClick = () => {
+//     setShowError(true);
+//   };
+
+//   const handleCloseError = () => {
+//     setShowError(false);
+//   };
+
+//   return (
+//     <div className="App">
+//  <button onClick={handleErrorClick}>Вызвать ошибку</button>
+
+//       {showError && (
+//         <Error
+//           title="Ошибка авторизации"
+//           message="Неверное имя пользователя или пароль."
+//           onClose={handleCloseError}
+//         />
+//       )}
+//     </div>
+//   );
+// }

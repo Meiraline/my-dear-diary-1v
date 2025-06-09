@@ -39,3 +39,7 @@
 .link:active {
     color: var(--menu-color-2);
 }
+
+link {
+    color: var(--text-akcent-color);
+}

@@ -10,10 +10,27 @@
 
 .App{
     width: 100%;
+
+    --background-color: #ffffff;
+    
+    --text-color: #202020;
+    --text-akcent-color: #032F47;
+
+    --menu-color-1: #CBEEF7;
+    --menu-color-2: #76B5C7;
+    --menu-color-3: #3E8FA6;
+    
+    --secondary-color-1: #3e51a6;
+    --secondary-color-2: #9D7BC4;
+    --secondary-color-3: #e48bff;
+    --secondary-color-4: #ebd86c;
+    --secondary-color-5: #26e4eb;
+
+    --sistem-color-1: #E84F64;
+    --sistem-color-2: #30BAA1;
+    --sistem-color-3: #6A88C6;
+
 }
-
-
-
 
 
 
