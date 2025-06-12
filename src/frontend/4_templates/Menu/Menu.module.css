@@ -1,0 +1,80 @@
+.menu{
+    
+
+    background-color: var(--background-color);
+}
+
+.conteiner{
+    display: flex;
+}
+
+
+/* Верхная панель */
+
+
+.hederPanel{
+    display: flex;
+    justify-content: space-between;
+
+
+    background-color: var(--menu-color-3);
+    height: 10vh;
+}
+
+.square{
+    /* width: 20vw; */
+    width: 0vw;
+    
+    
+}
+
+.routeButton{
+    display: flex;
+    margin: 0vw 0vw ;
+    background-color: var(--menu-color-2);
+}
+
+.meniButton{
+    display: flex;
+    margin-left: 5vw;
+    padding: 0vw 10vw;
+    background-color: var(--menu-color-3);
+}
+
+
+
+.chengRegim{
+    display: flex;
+    margin-left: 5vw;
+    padding: 0vw 5vw;
+    background-color: var(--menu-color-2);
+}
+
+
+/* Левая панель  */
+
+.leftPanel{
+    background-color: aqua;
+    height: 90vh;
+
+    /* width: 26vw; */
+    width:10px ;
+
+}
+
+
+
+/* Правая панель */
+
+.rightPanel{
+    background-color: aquamarine;
+    height: 90vh;
+}
+
+/* Рабочая область */
+
+.workTabel{
+background-color: var(--background-color);
+height: 90vh;
+width: 100%;
+}

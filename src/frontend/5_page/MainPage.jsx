@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import UserContext from '../../UserContext';
 
+import Menu from '../4_templates/Menu/Menu';
+
 function MainPage() {
   const { currentUser, setCurrentUser } = useContext(UserContext);
   const navigate = useNavigate();
@@ -14,8 +16,11 @@ function MainPage() {
 
   return (
     <div>
-      <h1>Добро пожаловать, {currentUser}!</h1>
-      <button onClick={handleLogout}>Выйти</button>
+      {/* <h1>Добро пожаловать, {currentUser}!</h1>
+      <button onClick={handleLogout}>Выйти</button> */}
+
+        <Menu />
+
     </div>
   );
 }
