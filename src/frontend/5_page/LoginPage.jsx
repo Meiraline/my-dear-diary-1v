@@ -82,27 +82,3 @@ function LoginPage() {
 export default LoginPage;
 
 
-// const [showError, setShowError] = useState(false);
-
-//   const handleErrorClick = () => {
-//     setShowError(true);
-//   };
-
-//   const handleCloseError = () => {
-//     setShowError(false);
-//   };
-
-//   return (
-//     <div className="App">
-//  <button onClick={handleErrorClick}>Вызвать ошибку</button>
-
-//       {showError && (
-//         <Error
-//           title="Ошибка авторизации"
-//           message="Неверное имя пользователя или пароль."
-//           onClose={handleCloseError}
-//         />
-//       )}
-//     </div>
-//   );
-// }

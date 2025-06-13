@@ -15,12 +15,10 @@ function TabelPage() {
   };
 
   return (
-    <div>
-      {/* <h1>Добро пожаловать, {currentUser}!</h1>
-      <button onClick={handleLogout}>Выйти</button> */}
-
-        <Menu />
-
+  <div>
+     
+      <Menu> тут будут таблицы</Menu>  
+        
     </div>
   );
 }

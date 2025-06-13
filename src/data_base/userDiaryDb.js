@@ -6,13 +6,10 @@ export function createUserDiaryDb(username) {
   const db = new Dexie(`Diary_${username}`);
   db.version(1).stores({
 
-// технические переменные 
- 
-    leftPanel:'open',
 
  // данные пользователя   
-    notes: '++id, title, content, createdAt, updatedAt',
     test: '++id , testTekst',
+
   });
   return db;
 }

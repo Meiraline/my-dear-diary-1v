@@ -23,44 +23,13 @@ function DaskPage() {
 
 
 
-const [text, setText] = useState('');
-const [tests, setTests] = useState([]);
-const [error, setError] = useState(null);
-
-
-useEffect(() => {
-    async function fetchTests() {
-      try {
-        const result = await getAllTests();
-        setTests(result);
-      } catch (e) {
-        setError('Ошибка загрузки данных: ' + e.message);
-      }
-    }
-
-    fetchTests();
-  }, []);
-
-  const handleAdd = async () => {
-    try {
-      await addTestEntry(text);
-      alert('Тест добавлен!');
-      setText('');
-      const updatedTests = await getAllTests(); // <-- Загрузить актуальные данные
-    setTests(updatedTests); // <-- Обновить список
-    } catch (e) {
-      alert('Ошибка: ' + e.message);
-    }
-  };
-
-
   return (
     <div>
-      {/* <h1>Добро пожаловать, {currentUser}!</h1>
-      <button onClick={handleLogout}>Выйти</button> */}
 
-
-        <Menu />
+        <Menu >
+          <h1>Добро пожаловать, {currentUser}!</h1>
+          <button onClick={handleLogout}>Выйти</button>
+        </Menu>
 
     </div>
   );

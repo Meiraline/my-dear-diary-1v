@@ -8,6 +8,13 @@ export const DiaryDbProvider = ({ children }) => {
   const { currentUser } = useContext(UserContext);
   const [db, setDb] = useState(null);
 
+// технические пременные
+
+const [leftPanel, setLeftPanel] = useState(false);
+
+
+// технические пременные
+
   useEffect(() => {
     if (currentUser) {
       const diaryDb = createUserDiaryDb(currentUser);
@@ -16,7 +23,7 @@ export const DiaryDbProvider = ({ children }) => {
   }, [currentUser]);
 
   return (
-    <DiaryDbContext.Provider value={db}>
+    <DiaryDbContext.Provider value={{db, leftPanel, setLeftPanel}}>
       {children}
     </DiaryDbContext.Provider>
   );

@@ -15,11 +15,9 @@ function NotePage() {
 
   return (
     <div>
-      {/* <h1>Добро пожаловать, {currentUser}!</h1>
-      <button onClick={handleLogout}>Выйти</button> */}
-
-        <Menu />
-
+     
+      <Menu> тут будут блакноты</Menu>  
+        
     </div>
   );
 }

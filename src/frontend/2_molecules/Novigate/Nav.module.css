@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  align-items: center;
+  background: var( --background-color);
+  border: 3px solid var( --text-akcent-color);
+  border-radius: 16px;
+  
+  box-shadow: 0 2px 8px rgba(26, 58, 74, 0.08);
+  padding: 0px;
+  height:  4.4vw;
+}
+
+.icon {
+  width: 4vw;
+  height: 4vw;
+  background: #ffffff;
+  color: #fff;
+  border-radius: 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  
+  flex-shrink: 0;
+  padding: 0.5vw;
+  border-radius: 0px ;
+  border-right:var( --text-akcent-color) 2px solid;
+  border-left: var( --text-akcent-color) 1px solid;
+}
+
+
+.id1{
+  border-radius: 10px 0px 0px 10px;
+}
+
+.id2{
+  border-radius: 0px 10px 10px 0px;
+}
+
+
+.icon:hover {
+ 
+  background: var( --menu-color-2);
+  
+}
+
+.closeCircle:active {
+  background: var( --text-akcent-color);
+}
+

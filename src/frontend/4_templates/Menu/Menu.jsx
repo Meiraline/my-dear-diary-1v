@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import UserContext from '../../../DiaryDbContext';
 
 import classes from './Menu.module.css';
 
@@ -9,7 +10,7 @@ import classes from './Menu.module.css';
 
 
 import ButtonSquareIcon from "../../1_atoms/Buttons/ButtonSquareIcon/ButtonSquareIcon"
-
+import Nav from '../../2_molecules/Novigate/Nav';   
 
 // Иморт частей меню
 
@@ -19,10 +20,7 @@ import CloseLeftMenu from './CloseLeftMenu';
 
 // Иморт иконок
 
-import tabelIcon from '../../pictchers/icon/Хранилище.svg';
-import dasklIcon from '../../pictchers/icon/Доска.svg';
-import notelIcon from '../../pictchers/icon/Записи.svg';
-import applIcon from '../../pictchers/icon/Приложения.svg';
+
 
 import belllIcon from '../../pictchers/icon/Колокольчик.svg';
 import settingsIcon from '../../pictchers/icon/Настройки.svg';
@@ -31,10 +29,12 @@ import morelIcon from '../../pictchers/icon/Многоточие.svg';
 
 
 
-function Menu (props)  {
 
 
-    const [leftPanel, setLeftPanel] = useState(false);
+
+function Menu ({children})  {
+
+    const { leftPanel, setLeftPanel } = useContext(UserContext);
     
     const ToggleLeftBar = () => {
         setLeftPanel(prev => !prev);
@@ -49,10 +49,7 @@ function Menu (props)  {
         <header className={classes.hederPanel}> 
             <div className={classes.square}></div>
             <div className={classes.routeButton}>
-                <ButtonSquareIcon icon={tabelIcon}> <Link to ="/tabel">+</Link></ButtonSquareIcon>
-                <ButtonSquareIcon icon={dasklIcon}> <Link to ="/dack">+</Link></ButtonSquareIcon>
-                <ButtonSquareIcon icon={notelIcon}> <Link to ="/note">+</Link></ButtonSquareIcon>
-                <ButtonSquareIcon icon={applIcon}> <Link to ="/app">+</Link></ButtonSquareIcon>
+                <Nav></Nav>
             </div>
             <div className={classes.meniButton}>
                 <ButtonSquareIcon icon={belllIcon}></ButtonSquareIcon>
@@ -73,14 +70,14 @@ function Menu (props)  {
                
 
                 {leftPanel ? <OpenLeftMenu></OpenLeftMenu> : <CloseLeftMenu></CloseLeftMenu> }
-                <button className={classes.leftButton} onClick={ToggleLeftBar}> {leftPanel ? '←' : '→'} </button>
+                
 
             </div>
 
             
 
             <div className={classes.workTabel}>
-                тут будет рабочая таблица
+                {children}
             </div>
 
             <div className={classes.rightPanel}>
