@@ -54,11 +54,10 @@
 /* Левая панель  */
 
 .leftPanel{
-    background-color: aqua;
+    background-color: var(--menu-color-2);
     height: 90vh;
 
-    /* width: 26vw; */
-    width:10px ;
+    /* width:10px ; */
 
 }
 

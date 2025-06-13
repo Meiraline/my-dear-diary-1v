@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { addUser, getUserByUsername } from '../../data_base/userDb';
+import { createUserDiaryDb } from '../../data_base/userDiaryDb';
 import { generateSalt, hashPassword } from '../../utils/hash';
 
 
@@ -35,7 +36,13 @@ function RegisterPage() {
     const passwordHash = await hashPassword(password, salt);
 
     await addUser({ username, passwordHash, salt });
+
+    const diaryDb = createUserDiaryDb(username);
+    
+
     navigate('/login');
+
+    
   };
 
  return (

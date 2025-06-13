@@ -3,8 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import UserContext from '../../UserContext';
 
 import Menu from '../4_templates/Menu/Menu';
-
-function MainPage() {
+function NotePage() {
   const { currentUser, setCurrentUser } = useContext(UserContext);
   const navigate = useNavigate();
 
@@ -25,4 +24,4 @@ function MainPage() {
   );
 }
 
-export default MainPage;
+export default NotePage;

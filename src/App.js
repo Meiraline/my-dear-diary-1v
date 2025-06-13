@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import AppRouter from './AppRouter';
 import UserContext from './UserContext';
+import { DiaryDbProvider } from './DiaryDbContext';
 
 import './App.css';
 
@@ -9,7 +10,9 @@ function App() {
 
   return (
     <UserContext.Provider value={{ currentUser, setCurrentUser }}>
-      <AppRouter />
+      <DiaryDbProvider>
+        <AppRouter />
+      </DiaryDbProvider>
     </UserContext.Provider>
   );
 }

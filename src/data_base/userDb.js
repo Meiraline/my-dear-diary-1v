@@ -1,5 +1,7 @@
 import Dexie from 'dexie';
 
+// Создание пользователя
+
 
 export const usersDb = new Dexie('MyDearDiaryUsers');
 usersDb.version(1).stores({
@@ -13,3 +15,5 @@ export async function addUser(user) {
 export async function getUserByUsername(username) {
   return await usersDb.users.get({ username });
 }
+
+
