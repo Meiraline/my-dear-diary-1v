@@ -14,7 +14,7 @@
 
 .hederPanel{
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
 
 
     background-color: var(--menu-color-3);
@@ -22,9 +22,9 @@
 }
 
 .square{
-    /* width: 20vw; */
-    width: 0vw;
+    width: 5vw;   
     
+    color: var(--menu-color-3);  
     
 }
 
@@ -32,7 +32,9 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
 
+    width: 20vw;
     margin: 0vw 0vw ;
     padding: 1vw;
     background-color: var(--menu-color-2);
@@ -41,8 +43,7 @@
 
 .meniButton{
     display: flex;
-    margin-left: 5vw;
-    padding: 0vw 10vw;
+    padding: 0vw 15.6vw;
     background-color: var(--menu-color-3);
 }
 
@@ -50,6 +51,8 @@
 
 .chengRegim{
     display: flex;
+    flex-direction: row;
+    align-items: center;
     margin-left: 5vw;
     padding: 0vw 5vw;
     background-color: var(--menu-color-2);
@@ -58,15 +61,31 @@
 
 /* Левая панель  */
 
-.leftPanel{
-    background-color: var(--menu-color-2);
+.leftPanelClose{
+    background-color: var(--menu-color-1);
     height: 90vh;
 
-    /* width:10px ; */
+    width: 5vw ;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 
 }
 
+.leftPanelOpen{
+    background-color: var(--menu-color-1);
+    height: 90vh;
+    
+    width: 25vw ;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 1vw;
+
+}
 
 /* Правая панель */
 
