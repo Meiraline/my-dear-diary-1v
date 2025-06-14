@@ -30,8 +30,13 @@
 
 .routeButton{
     display: flex;
+    flex-direction: row;
+    align-items: center;
+
     margin: 0vw 0vw ;
+    padding: 1vw;
     background-color: var(--menu-color-2);
+    
 }
 
 .meniButton{

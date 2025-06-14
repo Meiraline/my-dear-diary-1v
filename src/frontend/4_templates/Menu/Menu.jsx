@@ -11,6 +11,7 @@ import classes from './Menu.module.css';
 
 import ButtonSquareIcon from "../../1_atoms/Buttons/ButtonSquareIcon/ButtonSquareIcon"
 import Nav from '../../2_molecules/Novigate/Nav';   
+import Toggle from '../../1_atoms/Buttons/Toggle/Toggle';
 
 // Иморт частей меню
 
@@ -27,7 +28,8 @@ import settingsIcon from '../../pictchers/icon/Настройки.svg';
 import chatlIcon from '../../pictchers/icon/Чат ии.svg';
 import morelIcon from '../../pictchers/icon/Многоточие.svg';
 
-
+import redIcon from '../../pictchers/icon/Редактировать.svg'
+import seeIcon from '../../pictchers/icon/Открытый глаз.svg'
 
 
 
@@ -58,7 +60,7 @@ function Menu ({children})  {
                 <ButtonSquareIcon icon={morelIcon}></ButtonSquareIcon>
             </div>
             <div className={classes.chengRegim}>
-                <input type="checkbox" />
+                <Toggle firstIcon = {redIcon}  secondIcon = {seeIcon} > </Toggle>
             </div>
         </header>
 
@@ -68,14 +70,11 @@ function Menu ({children})  {
             <div className={classes.leftPanel}>
 
                
-
-                {leftPanel ? <OpenLeftMenu></OpenLeftMenu> : <CloseLeftMenu></CloseLeftMenu> }
-                
+                {leftPanel ? <OpenLeftMenu></OpenLeftMenu> : <CloseLeftMenu></CloseLeftMenu> }     
 
             </div>
 
             
-
             <div className={classes.workTabel}>
                 {children}
             </div>

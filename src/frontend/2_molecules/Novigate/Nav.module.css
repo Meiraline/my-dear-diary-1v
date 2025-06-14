@@ -44,7 +44,7 @@
   
 }
 
-.closeCircle:active {
+.icon:active {
   background: var( --text-akcent-color);
 }
 
