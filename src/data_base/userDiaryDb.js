@@ -9,6 +9,7 @@ export function createUserDiaryDb(username) {
 
  // данные пользователя   
     test: '++id , testTekst',
+    opoveschenia: '++id, titel, text, detaTime'
 
   });
   return db;

@@ -13,14 +13,10 @@ import ButtonSquareIcon from "../../1_atoms/Buttons/ButtonSquareIcon/ButtonSquar
 import Nav from '../../2_molecules/Novigate/Nav';   
 import Toggle from '../../1_atoms/Buttons/Toggle/Toggle';
 
-// Иморт частей меню
 
-import OpenLeftMenu from './OpenLeftMenu';
-import CloseLeftMenu from './CloseLeftMenu';
 
 
 // Иморт иконок
-
 
 
 import belllIcon from '../../pictchers/icon/Колокольчик.svg';
@@ -32,14 +28,55 @@ import redIcon from '../../pictchers/icon/Редактировать.svg'
 import seeIcon from '../../pictchers/icon/Открытый глаз.svg'
 
 
+// Импорты правых панелей
+
+import CollPanel from './RitePanel/CollPanel';
+import MorePanel from './RitePanel/MorePanel';
+import SettingsPanel from './RitePanel/SettingsPanel';
+import ChatPanel from './RitePanel/ChatPanel';
+
+// Иморт левых панелей
+
+import TableCloseR_Panel from './TabelePanel/TableCloseR_Panel'
+import TableOpenR_Panel from './TabelePanel/TableOpenR_Panel'
+import TableCloseW_Panel from './TabelePanel/TableCloseW_Panel'
+import TableOpenW_Panel from './TabelePanel/TableOpenW_Panel'
+
+import DaskCloseR_Panel from './DaskPanel/DaskCloseR_Panel'
+import DaskOpenR_Panel from './DaskPanel/DaskOpenR_Panel'
+import DaskCloseW_Panel  from './DaskPanel/DaskCloseW_Panel'
+import DaskOpenW_Panel from './DaskPanel/DaskOpenW_Panel'
+
+import NoteCloseR_Panel from './NotePanel/NoteCloseR_Panel'
+import NoteOpenR_Panel from './NotePanel/NoteOpenR_Panel'
+import NoteCloseW_Panel from './NotePanel/NoteCloseW_Panel'
+import NoteOpenW_Panel from './NotePanel/NoteOpenW_Panel'
+
+import AppCloseR_Panel from './AppPanel/AppCloseR_Panel'
+import AppOpenR_Panel  from './AppPanel/AppOpenR_Panel'
+import AppCloseW_Panel  from './AppPanel/AppCloseW_Panel'
+import AppOpenW_Panel from './AppPanel/AppOpenW_Panel'
 
 
 function Menu ({children})  {
 
     const { leftPanel, setLeftPanel } = useContext(UserContext);
+    const { leftPanelOpen,  setLeftPanelOpen } = useContext(UserContext);
+    const {redRegim, setRedRegim } = useContext(UserContext);
+
+
+    const { rightPanel, setRightPanel } = useContext(UserContext);
+
+
     
-    const ToggleLeftBar = () => {
-        setLeftPanel(prev => !prev);
+    
+ 
+    const RitepanelCheng = (panelName) => {
+        setRightPanel(prev => (prev === panelName ? null : panelName));
+    }
+
+    const ChengRegim = () => {
+         setRedRegim(prev => !prev);
     }
 
 
@@ -54,13 +91,13 @@ function Menu ({children})  {
                 <Nav></Nav>
             </div>
             <div className={classes.meniButton}>
-                <ButtonSquareIcon icon={belllIcon}></ButtonSquareIcon>
-                <ButtonSquareIcon icon={settingsIcon}></ButtonSquareIcon>
-                <ButtonSquareIcon icon={chatlIcon}></ButtonSquareIcon>
-                <ButtonSquareIcon icon={morelIcon}></ButtonSquareIcon>
+                <ButtonSquareIcon icon={belllIcon} onClick={() => RitepanelCheng('coll')} />
+                <ButtonSquareIcon icon={settingsIcon} onClick={() => RitepanelCheng('settings')} />
+                <ButtonSquareIcon icon={chatlIcon} onClick={() => RitepanelCheng('chat')} />
+                <ButtonSquareIcon icon={morelIcon} onClick={() => RitepanelCheng('more')} />
             </div>
-            <div className={classes.chengRegim}>
-                <Toggle firstIcon = {redIcon}  secondIcon = {seeIcon} > </Toggle>
+            <div className={classes.chengRegim} onClick={() => ChengRegim()}>
+                <Toggle firstIcon = {redIcon}  secondIcon = {seeIcon}   > </Toggle>
             </div>
         </header>
 
@@ -70,7 +107,30 @@ function Menu ({children})  {
             <div className={classes.leftPanel}>
 
                
-                {leftPanel ? <OpenLeftMenu></OpenLeftMenu> : <CloseLeftMenu></CloseLeftMenu> }     
+                
+
+                {leftPanel === 'tabl' && leftPanelOpen === false && redRegim === true && <TableCloseR_Panel />}
+                {leftPanel === 'tabl' && leftPanelOpen === true && redRegim === true && <TableOpenR_Panel />}
+                {leftPanel === 'tabl' && leftPanelOpen === false && redRegim === false && <TableCloseW_Panel />}
+                {leftPanel === 'tabl' && leftPanelOpen === true && redRegim === false && <TableOpenW_Panel />}
+
+                {leftPanel === 'dask' && leftPanelOpen === false && redRegim === true && <DaskCloseR_Panel />}
+                {leftPanel === 'dask' && leftPanelOpen === true && redRegim === true && <DaskOpenR_Panel />}
+                {leftPanel === 'dask' && leftPanelOpen === false && redRegim === false && <DaskCloseW_Panel />}
+                {leftPanel === 'dask' && leftPanelOpen === true && redRegim === false && <DaskOpenW_Panel />}
+
+                {leftPanel === 'note' && leftPanelOpen === false && redRegim === true && <NoteCloseR_Panel />}
+                {leftPanel === 'note' && leftPanelOpen === true && redRegim === true && <NoteOpenR_Panel />}
+                {leftPanel === 'note' && leftPanelOpen === false && redRegim === false && <NoteCloseW_Panel />}
+                {leftPanel === 'note' && leftPanelOpen === true && redRegim === false && <NoteOpenW_Panel />}
+
+                {leftPanel === 'app' && leftPanelOpen === false && redRegim === true && <AppCloseR_Panel />}
+                {leftPanel === 'app' && leftPanelOpen === true && redRegim === true && <AppOpenR_Panel />}
+                {leftPanel === 'app' && leftPanelOpen === false && redRegim === false && <AppCloseW_Panel />}
+                {leftPanel === 'app' && leftPanelOpen === true && redRegim === false && <AppOpenW_Panel />}
+
+
+
 
             </div>
 
@@ -79,9 +139,14 @@ function Menu ({children})  {
                 {children}
             </div>
 
-            <div className={classes.rightPanel}>
-                <div className={ classes.rightConteiner}></div>
-                <button className={classes.rightButton}>+</button>
+            <div >
+
+                {rightPanel === 'coll' && <CollPanel />}
+                {rightPanel === 'settings' && <SettingsPanel />}
+                {rightPanel === 'chat' && <ChatPanel />}
+                {rightPanel === 'more' && <MorePanel />}
+               
+
             </div>
 
         </div>

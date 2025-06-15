@@ -10,7 +10,11 @@ export const DiaryDbProvider = ({ children }) => {
 
 // технические пременные
 
-const [leftPanel, setLeftPanel] = useState(false);
+const [leftPanel, setLeftPanel] = useState('dask');
+const [leftPanelOpen, setLeftPanelOpen] = useState(false)
+const [redRegim, setRedRegim] = useState(false)
+
+const [rightPanel,setRightPanel ] = useState(null)
 
 
 // технические пременные
@@ -23,7 +27,7 @@ const [leftPanel, setLeftPanel] = useState(false);
   }, [currentUser]);
 
   return (
-    <DiaryDbContext.Provider value={{db, leftPanel, setLeftPanel}}>
+    <DiaryDbContext.Provider value={{db, leftPanel, setLeftPanel,leftPanelOpen, setLeftPanelOpen, redRegim ,setRedRegim, rightPanel, setRightPanel }}>
       {children}
     </DiaryDbContext.Provider>
   );

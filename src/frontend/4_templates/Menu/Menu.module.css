@@ -90,9 +90,21 @@
 /* Правая панель */
 
 .rightPanel{
-    background-color: aquamarine;
-    height: 90vh;
+   max-height: 90vh;
+   height: 90vh;
+   width: 17.5vw ;
+
+   background-color: var(--menu-color-1);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+   
 }
+
+
+
+
 
 /* Рабочая область */
 
