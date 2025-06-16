@@ -10,7 +10,7 @@ const Toggle = ({ firstIcon, secondIcon }) => {
     <div className={classes["toggle-switch"]} onClick={toggle}>
         <div className={`${classes.track} ${enabled ? classes.enabled : ''}`}>
             <div className={classes.thumb}>
-                <img src={enabled ? firstIcon : secondIcon} alt="icon" className={classes.icon} />
+                <img src={enabled ? firstIcon : secondIcon} alt="icon"  className={`${classes.icon} theme-icon`} />
             </div>
         </div>
     </div>

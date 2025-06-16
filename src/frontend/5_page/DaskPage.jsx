@@ -9,9 +9,14 @@ import { getAllTests, addTestEntry } from '../../data_base/userDiaryDb';
 
 import Menu from '../4_templates/Menu/Menu';
 
+
+
+
+
 function DaskPage() {
   
  
+
 
 
 
@@ -19,7 +24,8 @@ function DaskPage() {
     <div>
 
         <Menu >
-          
+         
+
         </Menu>
 
     </div>

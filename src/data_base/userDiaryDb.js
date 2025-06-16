@@ -9,7 +9,8 @@ export function createUserDiaryDb(username) {
 
  // данные пользователя   
     test: '++id , testTekst',
-    opoveschenia: '++id, titel, text, detaTime'
+    opoveschenia: '++id, titel, text, detaTime',
+    settings: '&key, value'
 
   });
   return db;
@@ -24,4 +25,15 @@ export async function getAllTests() {
 export async function addTestEntry(testTekst) {
   const db = createUserDiaryDb(username);
   return await db.test.add({ testTekst });
+}
+
+export async function saveTheme(theme) {
+  const db = createUserDiaryDb(username);
+  await db.settings.put({ key: 'theme', value: theme });
+}
+
+export async function getSavedTheme() {
+  const db = createUserDiaryDb(username);
+  const record = await db.settings.get('theme');
+  return record?.value || 'light'; 
 }

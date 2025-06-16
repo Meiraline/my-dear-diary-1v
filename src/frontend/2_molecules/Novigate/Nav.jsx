@@ -10,33 +10,32 @@ import notelIcon from '../../pictchers/icon/Записи.svg';
 import applIcon from '../../pictchers/icon/Приложения.svg';
 
 function Nav() {
-
   const { leftPanel, setLeftPanel } = useContext(UserContext);
 
- const PanelCheng = (panelName) => {
-  setLeftPanel(prev => (prev === panelName ? panelName : panelName));
-};
-
+  const PanelCheng = (panelName) => {
+    setLeftPanel(prev => (prev === panelName ? panelName : panelName));
+  };
 
   return (
     <nav className={styles.container}>
       <Link to="/tabel" onClick={() => PanelCheng('tabl')}>
-        <img className={`${styles.icon} ${styles.id1}`} src={tabelIcon} alt="Tabel" />
+        <img className={`${styles.icon} theme-icon ${styles.id1}`} src={tabelIcon} alt="Tabel" />
       </Link>
-      <Link to="/main"  onClick={() => PanelCheng('dask')}>
-        <img className={styles.icon} src={dasklIcon} alt="Dashboard" />
+      <Link to="/main" onClick={() => PanelCheng('dask')}>
+        <img className={`${styles.icon} theme-icon`} src={dasklIcon} alt="Dashboard" />
       </Link>
-      <Link to="/note"  onClick={() => PanelCheng('note')}>
-        <img className={styles.icon} src={notelIcon} alt="Notes" />
+      <Link to="/note" onClick={() => PanelCheng('note')}>
+        <img className={`${styles.icon} theme-icon`} src={notelIcon} alt="Notes" />
       </Link>
-      <Link to="/app"  onClick={() => PanelCheng('app')}>
-        <img className={`${styles.icon} ${styles.id2}`} src={applIcon} alt="Apps" />
+      <Link to="/app" onClick={() => PanelCheng('app')}>
+        <img className={`${styles.icon} theme-icon ${styles.id2}`} src={applIcon} alt="Apps" />
       </Link>
     </nav>
   );
 }
 
 export default Nav;
+
 
 
 

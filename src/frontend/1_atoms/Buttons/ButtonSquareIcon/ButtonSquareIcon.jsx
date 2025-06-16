@@ -1,7 +1,6 @@
 import classes from './ButtonSquareIcon.module.css';
 
 const ButtonSquareIcon = ({ icon, children, color, ...props }) => {
-  // Выбираем класс по типу
   const buttonClass =
     color === 'n'
       ? `${classes.button} ${classes.color}`
@@ -10,7 +9,7 @@ const ButtonSquareIcon = ({ icon, children, color, ...props }) => {
   return (
     <button {...props} className={buttonClass}>
       {icon && (
-        <img src={icon} alt="" className={classes.icon} />
+        <img src={icon} alt="" className={`theme-icon`} />
       )}
       {children}
     </button>

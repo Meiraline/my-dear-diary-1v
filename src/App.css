@@ -8,7 +8,7 @@
     
 }
 
-.App{
+.App.light{
     width: 100%;
 
     --background-color: #ffffff;
@@ -34,34 +34,8 @@
 
 
 
-/* Цветовая тема приложения */
 
-/* Светлая тема */
-:root {
-    
-    --background-color: #ffffff;
-    
-    --text-color: #202020;
-    --text-akcent-color: #032F47;
-
-    --menu-color-1: #CBEEF7;
-    --menu-color-2: #76B5C7;
-    --menu-color-3: #3E8FA6;
-    
-    --secondary-color-1: #3e51a6;
-    --secondary-color-2: #9D7BC4;
-    --secondary-color-3: #e48bff;
-    --secondary-color-4: #ebd86c;
-    --secondary-color-5: #26e4eb;
-
-    --sistem-color-1: #E84F64;
-    --sistem-color-2: #30BAA1;
-    --sistem-color-3: #6A88C6;
-    
-}
-
-/* Темная тема */
-.dark-theme {
+.App.dark {
     --background-color: #181c20;
     --text-color: #f7faff;
     --text-akcent-color: #7fd1ff;
@@ -79,4 +53,14 @@
     --sistem-color-1: #e84f64;
     --sistem-color-2: #30baa1;
     --sistem-color-3: #6a88c6;
+}
+
+.App.dark img.theme-icon {
+  filter: invert(1) brightness(2); /* Делает иконки белыми */
+  border-color: var(--background-color);
+}
+
+/* По умолчанию */
+.App.light img.theme-icon {
+  filter: none;
 }

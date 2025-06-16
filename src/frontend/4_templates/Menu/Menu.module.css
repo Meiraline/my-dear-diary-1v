@@ -114,3 +114,23 @@ background-color: var(--background-color);
 height: 90vh;
 width: 100%;
 }
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* расстояние между элементами */
+}
+
+/* Примерные стили, которые можно доработать: */
+.line {
+  width: 15vw;
+  height: 2px;
+  margin-bottom: 1vw;
+  background-color: var(--menu-color-3);
+  flex-shrink: 0;
+}
+
+.row h4 {
+  margin: 0;
+  font-size: 16px;
+}
