@@ -34,8 +34,45 @@
   "start": "Start",
   "pause": "Pause",
   "count": "Count",
-  "counter": "Счётчик",
+  
+  "note.placeholder": "текст заметки",
+  "writeNote": "Напишите заметку...",
+ 
+  "addBlock": "Добавить блок",
+  "blockType": "Тип блока",
+  "noteTitleLabel": "Заголовок заметки",
+  "noteTextLabel": "Текст заметки",
+  "timerTitleLabel": "Название таймера",
+  "timerLengthLabel": "Длина таймера (сек)",
+  "counterTitleLabel": "Название счётчика",
+  "counterStartLabel": "Начальное значение счётчика",
+  "delete": "Удалить",
+  "timer": "Таймер",
   "note": "Заметка",
-  "writeNote": "Напишите заметку..."
+  "counter": "Счётчик",
+
+"timerBlock": {
+    "titleDefault": "Таймер",
+    "start": "Старт",
+    "stop": "Стоп",
+    "reset": "Сброс",
+    "seconds": "сек"
+  },
+  "counterBlock": {
+    "titleDefault": "Счётчик",
+    "increment": "+1",
+    "decrement": "-1"
+  },
+  "noteBlock": {
+    "titleDefault": "Заметка",
+    "placeholder": "Введите текст заметки..."
+  },
+  "common": {
+    "delete": "Удалить"
+  }
 
 }
+
+
+  
+

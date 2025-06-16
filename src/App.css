@@ -55,6 +55,11 @@
     --sistem-color-3: #6a88c6;
 }
 
+
+.App label{
+    color: var(--text-color);
+}
+
 .App.dark img.theme-icon {
   filter: invert(1) brightness(2); /* Делает иконки белыми */
   border-color: var(--background-color);

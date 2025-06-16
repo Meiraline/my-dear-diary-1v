@@ -3,63 +3,41 @@ import CounterBlock from '../../3_organisms/CounterBlock/CounterBlock';
 import NoteBlock from '../../3_organisms/NoteBlock/NoteBlock';
 import TimerBlock from '../../3_organisms/TimerBlock/TimerBlock';
 import { getAllBlocks, saveBlockState, deleteBlock } from '../../../data_base/userDiaryDb';
+import { useTranslation } from 'react-i18next';
 
 const DiaryBlocksContainer = ({ reloadTrigger }) => {
+  const { t } = useTranslation();
   const [blocks, setBlocks] = useState([]);
 
   useEffect(() => {
-    loadBlocks();
+    getAllBlocks().then(setBlocks);
   }, [reloadTrigger]);
 
-  async function loadBlocks() {
-    const allBlocks = await getAllBlocks();
-    setBlocks(allBlocks);
-  }
-
-  async function handleDelete(id) {
+  const handleDelete = async id => {
     await deleteBlock(id);
-    loadBlocks();
-  }
+    setBlocks(await getAllBlocks());
+  };
 
-  async function handleUpdatePosition(id, x, y, width, height) {
+  const handleUpdate = async (id, x, y, width, height) => {
     const block = blocks.find(b => b.id === id);
     if (!block) return;
-    await saveBlockState({
-      ...block,
-      x,
-      y,
-      width,
-      height
-    });
-  }
+    await saveBlockState({ ...block, x, y, width, height });
+  };
 
   return (
     <div>
-      {blocks.map(block => {
-        const commonProps = {
-          id: block.id,
-          x: block.x,
-          y: block.y,
-          width: block.width,
-          height: block.height,
-          data: block.data,
-          onUpdatePosition: handleUpdatePosition,
-          onDelete: handleDelete
-        };
-
-        switch (block.type) {
-          case 'counter':
-            return <CounterBlock key={block.id} {...commonProps} />;
-          case 'note':
-            return <NoteBlock key={block.id} {...commonProps} />;
-          case 'timer':
-            return <TimerBlock key={block.id} {...commonProps} />;
-          default:
-            return null;
-        }
-      })}
+      {blocks.map(b => (
+        <div key={b.id} style={{ position: 'absolute', zIndex: 1 }}>
+          {{
+            'note': <NoteBlock {...b} onUpdatePosition={handleUpdate} onDelete={handleDelete} />,
+            'counter': <CounterBlock {...b} onUpdatePosition={handleUpdate} onDelete={handleDelete} />,
+            'timer': <TimerBlock {...b} onUpdatePosition={handleUpdate} onDelete={handleDelete} />
+          }[b.type]}
+        </div>
+      ))}
     </div>
   );
 };
 
 export default DiaryBlocksContainer;
+
