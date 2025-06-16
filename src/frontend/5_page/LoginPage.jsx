@@ -41,7 +41,7 @@ function LoginPage() {
 
     localStorage.setItem('currentUser', username);
     setCurrentUser(username);
-    navigate('/dack');
+    navigate('/main');
   };
 
   return (

@@ -18,7 +18,7 @@ const ToggleLeftBar = () => {
 
   return (
   <div className={ classes.leftPanelClose}>
-    1111555
+    
     <ButtonSquareIcon className={classes.leftButton} onClick={ToggleLeftBar}> → </ButtonSquareIcon>
    
  </div>

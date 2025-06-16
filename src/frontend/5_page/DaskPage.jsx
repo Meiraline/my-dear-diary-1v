@@ -11,15 +11,7 @@ import Menu from '../4_templates/Menu/Menu';
 
 function DaskPage() {
   
-  const { currentUser, setCurrentUser } = useContext(UserContext);
-  const navigate = useNavigate();
-  const db = useDiaryDb();
-
-  const handleLogout = () => {
-    localStorage.removeItem('currentUser');
-    setCurrentUser(null);
-    navigate('/login');
-  };
+ 
 
 
 
@@ -27,8 +19,7 @@ function DaskPage() {
     <div>
 
         <Menu >
-          <h1>Добро пожаловать, {currentUser}!</h1>
-          <button onClick={handleLogout}>Выйти</button>
+          
         </Menu>
 
     </div>

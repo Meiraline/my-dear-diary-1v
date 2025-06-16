@@ -17,7 +17,7 @@ const ToggleLeftBar = () => {
   return (
   <div className={ classes.leftPanelOpen}>
     <div>
-      Открыто3333
+      
     </div>
     <ButtonLongIcon className={classes.leftButton} onClick={ToggleLeftBar}>←</ButtonLongIcon>
     
