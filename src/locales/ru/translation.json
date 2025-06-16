@@ -1,0 +1,31 @@
+{
+  "login": "Вход",
+  "register": "Регистрация",
+
+  "registerTitle": "Давай знакомиться!",
+  "registerSubtitle": "Зарегистрируйся, чтобы продолжить",
+
+  "registerButton": "Зарегистрироваться",
+
+  "registerErrorTitle": "Ошибка регистрации",
+  "userExists": "Пользователь уже существует",
+
+  "loginTitle": "Мы скучали!",
+  "loginSubtitle": "Войдите, чтобы продолжить",
+  "loginButton": "Войти",
+
+  "loginErrorTitle": "Ошибка входа",
+  "userNotFound": "Пользователь не найден",
+  "wrongPassword": "Неверный пароль",
+  "fillAllFields": "Пожалуйста, заполните все поля",
+  "username": "Имя пользователя",
+  "password": "Пароль",
+
+  "languageSwitcher" :"Смена пороля",
+  "temaSwitcher" :"Смена темы",
+  
+  "accountManagement": "Управление аккаунтом",
+  "exit": "выйти",
+  "changePassword":"сменить пароль"
+
+}

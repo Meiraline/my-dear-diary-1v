@@ -1,0 +1,30 @@
+{
+  "login": "Login",
+  "register": "Register",
+
+  "registerTitle": "Let's get to know each other!",
+  "registerSubtitle": "Sign up to continue",
+
+  "registerButton": "Sign Up",
+
+  "registerErrorTitle": "Registration Error",
+  "userExists": "User already exists",
+
+  "loginTitle": "We missed you!",
+  "loginSubtitle": "Log in to continue",
+  "loginButton": "Log In",
+
+  "loginErrorTitle": "Login Error",
+  "userNotFound": "User not found",
+  "wrongPassword": "Incorrect password",
+  "fillAllFields": "Please fill in all fields",
+
+  "username": "Username",
+  "password": "Password",
+
+  "languageSwitcher": "Change language",
+  "temaSwitcher": "Change theme",
+  "accountManagement": "Account management",
+  "exit": "Exit",
+  "changePassword":"Change password"
+}
