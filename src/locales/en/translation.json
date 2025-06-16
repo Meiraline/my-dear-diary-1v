@@ -26,5 +26,16 @@
   "temaSwitcher": "Change theme",
   "accountManagement": "Account management",
   "exit": "Exit",
-  "changePassword":"Change password"
+  "changePassword":"Change password",
+
+  "timerTitle": "Название таймера",
+  "counterTitle": "Название счётчика",
+  "noteTitle": "Название заметки",
+  "goal": "Цель",
+  "start": "Старт",
+  "pause": "Пауза",
+  "count": "Счёт",
+  "counter": "Counter",
+  "note": "Note",
+  "writeNote": "Write your note here..."
 }

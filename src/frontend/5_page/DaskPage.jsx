@@ -1,35 +1,24 @@
-import React, { useContext, useState, useEffect } from 'react';
-
-import { useNavigate } from 'react-router-dom';
-
-import UserContext from '../../UserContext';
-import { useDiaryDb } from '../../DiaryDbContext';
-import { getAllTests, addTestEntry } from '../../data_base/userDiaryDb';
-
-
+import React, { useState } from 'react';
 import Menu from '../4_templates/Menu/Menu';
-
-
-
-
+import DiaryBlocksContainer from '../4_templates/BlocksContainer/DiaryBlocksContainer';
+import DaskOpenR_Panel from '../4_templates/Menu/DaskPanel/DaskOpenR_Panel';
 
 function DaskPage() {
-  
- 
+  const [reloadTrigger, setReloadTrigger] = useState(0);
 
-
-
+  const refreshBlocks = () => {
+    setReloadTrigger(prev => prev + 1);
+  };
 
   return (
     <div>
-
-        <Menu >
-         
-
-        </Menu>
-
+      <Menu>
+        <DiaryBlocksContainer reloadTrigger={reloadTrigger} />
+        {/* <DaskOpenR_Panel refreshBlocks={refreshBlocks} /> */}
+      </Menu>
     </div>
   );
 }
 
 export default DaskPage;
+

@@ -26,6 +26,16 @@
   
   "accountManagement": "Управление аккаунтом",
   "exit": "выйти",
-  "changePassword":"сменить пароль"
+  "changePassword":"сменить пароль",
+  "timerTitle": "Timer Name",
+  "counterTitle": "Counter Name",
+  "noteTitle": "Note Title",
+  "goal": "Goal",
+  "start": "Start",
+  "pause": "Pause",
+  "count": "Count",
+  "counter": "Счётчик",
+  "note": "Заметка",
+  "writeNote": "Напишите заметку..."
 
 }

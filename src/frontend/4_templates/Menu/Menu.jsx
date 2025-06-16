@@ -68,7 +68,11 @@ function Menu ({children})  {
     const { rightPanel, setRightPanel } = useContext(UserContext);
 
 
+    const [reloadTrigger, setReloadTrigger] = useState(0);
     
+      const refreshBlocks = () => {
+        setReloadTrigger(prev => prev + 1);
+      };
     
  
     const RitepanelCheng = (panelName) => {
@@ -115,7 +119,7 @@ function Menu ({children})  {
                 {leftPanel === 'tabl' && leftPanelOpen === true && redRegim === false && <TableOpenW_Panel />}
 
                 {leftPanel === 'dask' && leftPanelOpen === false && redRegim === true && <DaskCloseR_Panel />}
-                {leftPanel === 'dask' && leftPanelOpen === true && redRegim === true && <DaskOpenR_Panel />}
+                {leftPanel === 'dask' && leftPanelOpen === true && redRegim === true && <DaskOpenR_Panel refreshBlocks={refreshBlocks}/>}
                 {leftPanel === 'dask' && leftPanelOpen === false && redRegim === false && <DaskCloseW_Panel />}
                 {leftPanel === 'dask' && leftPanelOpen === true && redRegim === false && <DaskOpenW_Panel />}
 
@@ -136,7 +140,7 @@ function Menu ({children})  {
 
             
             <div className={classes.workTabel}>
-                {children}
+                {React.cloneElement(children, { reloadTrigger })}
             </div>
 
             <div >

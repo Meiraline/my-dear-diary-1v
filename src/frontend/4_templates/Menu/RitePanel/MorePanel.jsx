@@ -33,7 +33,7 @@ function MorePanel() {
   return (
     <div className={classes.rightPanel}>
       <div className={classes.rightPanelContent}>
-        <h1>{t('accountManagement')}, {currentUser}!</h1>
+        <h1>{t('accountManagement')}, {currentUser}</h1>
         <div>
           <ButtonSquareIcon onClick={handleLogout}>
             {t('exit')}
